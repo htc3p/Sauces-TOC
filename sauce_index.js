@@ -124,17 +124,14 @@ document.addEventListener('DOMContentLoaded', function(){
     element.style.backgroundColor = "rgb(153,88,42)";
   });
   
-  // Used to track which ingredients will be dropped during the game
   let levelSauces = {
     level1: [tomato, tomato2, tomato3, chili, chili2, chili3, cheese, cheese2, cheese3, pepper, pepper2, pepper3]
   }
   
-  // refreshes the levelIngredients arrays when depleted during levels
   function restock(){
     levelSauces.level1 = [tomato, tomato2, tomato3, chili, chili2, chili3, cheese, cheese2, cheese3, pepper, pepper2, pepper3]
   }
   
-  // The goal for each level -- only level1 is used at present
   const target = {
     level1: [bowl, cheese, chili, pepper, tomato]
   }
@@ -165,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function(){
     startButton.style.display = "none";
     titleDiv.style.display = "none";
     // titleText.style.display = "none";
-    // gameArea.style.display = "flex"; 
+    gameArea.style.display = "flex"; 
   
     // Sets the ingredients array for the level
     var currentSauces = levelSauces.level1;
@@ -175,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function(){
       return currentSauces[Math.floor(Math.random() * (currentSauces.length))];
     }
   
-    // Function for rolling a random drop-pipe for each ingredient to fall from
+    // Function for rolling a random pipe for each sauce to fall from
     function randomPipe() {
       return allPipesLeft[Math.floor(Math.random() * (allPipesLeft.length))];
     }
@@ -248,6 +245,7 @@ document.addEventListener('DOMContentLoaded', function(){
   
         if (areEqual(target.level1, saucesArray)===true) {
           clearInterval(id);
+
           // Display the start button and title,
           startButton.style.display = "inline-block";
           titleDiv.style.display = "block";
