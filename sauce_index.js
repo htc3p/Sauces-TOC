@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function(){
-    document.body.style.backgroundImage = 'url(\'state_bread_background.png\')'
+    document.body.style.backgroundImage = 'url("images/bg101.png")';
   })
   
   function redirectToResultPage() {
     document.getElementById('transition-container').style.animation = 'sliding-left-in 1s forwards'
     setTimeout(function(){
-      window.location.href = 'minigame_bread.html';
+      window.location.href = 'drink.html';
     }, 1000)
   }
   
